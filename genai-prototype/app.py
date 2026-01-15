@@ -93,12 +93,14 @@ if "df" in st.session_state:
     )
     st.altair_chart(chart, use_container_width=True)
 
+    
+
 ### Add Slider for temperature
 #temperature = st.slider("Select Temperature:", 0.0, 1.0, 0.7, 0.1)
 
-endpoint = "https://pstestopenaidply-atwznrvwj734e.openai.azure.com/"
-model_name = "gpt-5-mini"
-deployment = "pstestopenaidply-atwznrvwj734e"
+endpoint = os.getenv("AI_ENDPOINT")
+model_name = os.getenv("AI_MODEL")
+deployment = os.getenv("AI_DEPOLOYMENT")
 
 subscription_key = os.getenv("SUBSCRIPTION_KEY")
 api_version = "2024-12-01-preview"
